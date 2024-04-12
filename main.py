@@ -37,7 +37,7 @@ def index():
     cards = Card.query.order_by(Card.id).all()
 
     return render_template('index.html',
-                           #cards = cards
+                           cards = cards
 
                            )
 
@@ -45,7 +45,7 @@ def index():
 @app.route('/card/<int:id>')
 def card(id):
     #Задание №2. Отоброзить нужную карточку по id
-    Card.query.get(id)
+    card = Card.query.get(id)
     
 
     return render_template('card.html', card=card)
